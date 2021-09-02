@@ -8,13 +8,12 @@ class PostResult {
 
   PostResult({required this.id, required this.name});
 
-  // ignore: empty_constructor_bodies
   factory PostResult.createPostResult(Map<String, dynamic> object) {
     return PostResult(id: object['id'], name: object['name']);
   }
 
   static Future<PostResult> connectAPI(String id, String name) async {
-    String apiURL = 'https://reqres.in/api/users';
+    Uri apiURL = Uri.parse('https://reqres.in/api/users');
 
     var resultAPI = await http.post(apiURL, body: {
       'id': id,

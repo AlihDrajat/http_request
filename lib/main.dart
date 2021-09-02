@@ -11,8 +11,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // ignore: avoid_init_to_null
-  PostResult? postResult = null;
+  PostResult? postResult;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +23,6 @@ class _MyAppState extends State<MyApp> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              // ignore: unnecessary_null_comparison
               Text((postResult != null)
                   ? postResult!.id + ' | ' + postResult!.name
                   : 'Tidak ada data'),
